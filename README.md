@@ -4,6 +4,19 @@ This is a small roblox lua module that adds some iterators (or more like generat
 
 Atm this module has 4 iterators.
 
+- [Extended Pairs](#extended-pairs)
+  - [msipairs](#msipairs)
+  - [mlipairs](#mlipairs)
+  - [cpairs](#cpairs)
+  - [Download](#download)
+  - [Code examples](#code-examples)
+  - [API](#api)
+    - [Functions](#functions)
+      - [`function` **msipairs**(...:`table`)](#function-msipairstable)
+      - [`function` **mlipairs**(...:`table`)](#function-mlipairstable)
+      - [`function` **cpairs**(...:`table`)](#function-cpairstable)
+      - [`function` **bipairs**(t:`table`)](#function-bipairsttable)
+
 ## msipairs
 
 A parallel stateless iterator, which stops at first nil. 
@@ -26,7 +39,7 @@ end
 
 ## mlipairs
 
-A parallel stateless iterator, which stops when *every value* is nil. 
+A parallel stateless iterator, which stops when **every value** is nil. 
 It returns the index and the value for each given array at that index.
 
 ```lua
@@ -75,7 +88,7 @@ d    7
 
 ## Download 
 - [from the release page](https://github.com/VerdommeMan/Extended-Pairs/releases)
-- [link to roblox asset page]()
+- [link to roblox asset page](https://www.roblox.com/library/6640534357/Extended-Pairs)
 - or you can build it from [src](/src) using rojo
 
 ## Code examples
@@ -123,5 +136,5 @@ The API is in the form of `returnType` **function**(argumentName:`type`)
 #### `function` **cpairs**(...:`table`)
 ##### It returns an iterator function
 
-#### `function` **bipairs**(...:`table`)
+#### `function` **bipairs**(t:`table`)
 ##### It returns an iterator function, this function is used to iterate backwards over an array (from higest index to lowest)
