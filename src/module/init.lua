@@ -31,12 +31,26 @@ local function mliter(t, i)
     return flag and i or nil, unpack(arr, 1, t.n)
 end
 
-function module.msipairs(...)
+local function cnext(t, k)
+    local k1, v1 = next(t.args[t.i], k)
+    if k1 ~= nil then
+        return k1, v1
+    elseif t.i < t.n then
+        t.i += 1
+        return cnext(t, nil)
+    end
+end
+
+function module.msipairs(...) -- multi shortest ipairs (stops at first nil)
     return msiter, {args = {...}, n = select('#', ...)}, 0
 end
 
-function module.mlipairs(...)
+function module.mlipairs(...) -- multi longest ipairs (stops when every array is nil)
     return mliter, {args = {...}, n = select('#', ...)}, 0
+end
+
+function module.cpairs(...) -- chained pairs ()
+    return cnext, {args = {...}, n = select('#', ...), i = 1}, nil
 end
 
 return module
