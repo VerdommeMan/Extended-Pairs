@@ -4,18 +4,20 @@ This is a small roblox lua module that adds some iterators (or more like generat
 
 Atm this module has 4 iterators.
 
-- [Extended Pairs](#extended-pairs)
-  - [msipairs](#msipairs)
-  - [mlipairs](#mlipairs)
-  - [cpairs](#cpairs)
-  - [Download](#download)
-  - [Code examples](#code-examples)
-  - [API](#api)
-    - [Functions](#functions)
-      - [`function` **msipairs**(...:`table`)](#function-msipairstable)
-      - [`function` **mlipairs**(...:`table`)](#function-mlipairstable)
-      - [`function` **cpairs**(...:`table`)](#function-cpairstable)
-      - [`function` **bipairs**(t:`table`)](#function-bipairsttable)
+## TOC
+- [TOC](#toc)
+- [msipairs](#msipairs)
+- [mlipairs](#mlipairs)
+- [cpairs](#cpairs)
+- [Download](#download)
+- [Code examples](#code-examples)
+- [API](#api)
+  - [Functions](#functions)
+    - [`function` **msipairs**(...:`table`)](#function-msipairstable)
+    - [`function` **mlipairs**(...:`table`)](#function-mlipairstable)
+    - [`function` **cpairs**(...:`table`)](#function-cpairstable)
+    - [`function` **bipairs**(t:`table`)](#function-bipairsttable)
+
 
 ## msipairs
 
