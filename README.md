@@ -6,10 +6,10 @@ Atm this module has 4 iterators.
 
 ## TOC
 - [TOC](#toc)
+- [Download](#download)
 - [msipairs](#msipairs)
 - [mlipairs](#mlipairs)
 - [cpairs](#cpairs)
-- [Download](#download)
 - [Code examples](#code-examples)
 - [API](#api)
   - [Functions](#functions)
@@ -18,6 +18,10 @@ Atm this module has 4 iterators.
     - [`function` **cpairs**(...:`table`)](#function-cpairstable)
     - [`function` **bipairs**(t:`table`)](#function-bipairsttable)
 
+## Download 
+- [from the release page](https://github.com/VerdommeMan/Extended-Pairs/releases)
+- [link to roblox asset page](https://www.roblox.com/library/6640534357/Extended-Pairs)
+- or you can build it from [src](/src) using rojo
 
 ## msipairs
 
@@ -87,11 +91,6 @@ c    6
 d    7       
 ]] 
 ```
-
-## Download 
-- [from the release page](https://github.com/VerdommeMan/Extended-Pairs/releases)
-- [link to roblox asset page](https://www.roblox.com/library/6640534357/Extended-Pairs)
-- or you can build it from [src](/src) using rojo
 
 ## Code examples
 
