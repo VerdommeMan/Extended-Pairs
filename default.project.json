@@ -1,0 +1,25 @@
+{
+  "name": "Extended Pairs",
+  "tree": {
+    "$className": "DataModel",
+
+    "HttpService": {
+      "$className": "HttpService",
+      "$properties": {
+        "HttpEnabled": true
+      }
+    },
+    "ServerScriptService":{
+      "$className": "ServerScriptService",
+      "epairs":{
+        "$path": "src/module"
+      }
+    },
+    "Players":{
+      "$className": "Players",
+      "$properties": {
+        "CharacterAutoLoads": false
+      }
+    }
+  }
+}
