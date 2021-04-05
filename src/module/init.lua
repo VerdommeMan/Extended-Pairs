@@ -1,5 +1,13 @@
 local module = {}
 
+local function biter(t, i)
+    i -= 1
+    local v = t[i]
+    if v then
+      return i, v
+    end
+end
+
 local function msiter(t, i)
     i += 1
     local arr = {}
@@ -51,6 +59,10 @@ end
 
 function module.cpairs(...) -- chained pairs ()
     return cnext, {args = {...}, n = select('#', ...), i = 1}, nil
+end
+
+function module.bipairs(t) -- backwards ipairs
+    return biter, t, #t + 1
 end
 
 return module
