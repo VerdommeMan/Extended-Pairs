@@ -3,7 +3,7 @@ local module = {}
 local function biter(t, i)
     i -= 1
     local v = t[i]
-    if v then
+    if v ~= nil then
       return i, v
     end
 end
@@ -39,6 +39,13 @@ local function mliter(t, i)
     return flag and i or nil, unpack(arr, 1, t.n)
 end
 
+local function viter(t, i)
+    i += 1
+    if i <= t.n then
+      return i, t.args[i]
+    end
+end
+
 local function cnext(t, k)
     local k1, v1 = next(t.args[t.i], k)
     if k1 ~= nil then
@@ -47,6 +54,10 @@ local function cnext(t, k)
         t.i += 1
         return cnext(t, nil)
     end
+end
+
+function module.vpairs(...) -- varadic pairs, pass a variadic and it will iterate over it while being nil safe, e.g. loops until select('#', ...) instead of until first nil
+    return viter, {args = {...}, n = select('#', ...)}, 0
 end
 
 function module.msipairs(...) -- multi shortest ipairs (stops at first nil)
