@@ -2,7 +2,7 @@
 
 This is a small roblox lua module that adds some iterators (or more like generators).
 
-Atm this module has 4 iterators.
+Atm this module has 5 iterators.
 
 ## TOC
 - [TOC](#toc)
@@ -10,12 +10,14 @@ Atm this module has 4 iterators.
 - [msipairs](#msipairs)
 - [mlipairs](#mlipairs)
 - [cpairs](#cpairs)
+- [vpairs](#vpairs)
 - [Code examples](#code-examples)
 - [API](#api)
   - [Functions](#functions)
     - [`function` **msipairs**(...:`table`)](#function-msipairstable)
     - [`function` **mlipairs**(...:`table`)](#function-mlipairstable)
     - [`function` **cpairs**(...:`table`)](#function-cpairstable)
+    - [`function` **vpairs**(...:`varadic`)](#function-vpairsvaradic)
     - [`function` **bipairs**(t:`table`)](#function-bipairsttable)
 
 ## Download 
@@ -92,6 +94,33 @@ d    7
 ]] 
 ```
 
+## vpairs
+
+A stateless iterator, very similar to ipairs but is given directly the varadic and will loop until select('#', ...) instead of until first nil
+It returns the index and the value.
+
+```lua
+
+function test(...)
+    for i, v in l.vpairs(...) do
+        print(i, v)
+    end
+end
+
+test("hello", nil, nil ,nil, 5, nil, {}, nil)
+
+[[ RESULT
+1    "hello" 
+2    nil
+3    nil  
+4    nil
+5    5
+6    nil
+7    {}
+8    nil
+]]
+```
+
 ## Code examples
 
 ```lua
@@ -120,6 +149,15 @@ local someOtherModel
 for _, part in l.cpairs(someModel:GetChildren(), someOtherModel:GetChildren()) do
   part.Transparency = 0
 end
+
+function test(...)
+    for i, v in l.vpairs(...) do
+        print(i, v)
+    end
+end
+
+test("hello", nil, nil ,nil, 5, nil, {}, nil)
+
 ```
 
 
@@ -136,6 +174,9 @@ The API is in the form of `returnType` **function**(argumentName:`type`)
 
 #### `function` **cpairs**(...:`table`)
 ##### It returns an iterator function
+
+#### `function` **vpairs**(...:`varadic`)
+##### It returns an iterator function, you pass the variadic direclty and it will loop until it full length, nil safe e.g. loops until select('#', ...) instead of until first nil
 
 #### `function` **bipairs**(t:`table`)
 ##### It returns an iterator function, this function is used to iterate backwards over an array (from higest index to lowest)
